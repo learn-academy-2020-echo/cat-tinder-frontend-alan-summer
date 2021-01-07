@@ -15,7 +15,7 @@ render()  {
 
   return (
     <div>
-      This is our catnew
+      <p>Make a New Alien.</p>
     </div>
       );
     }

@@ -15,7 +15,7 @@ render()  {
 
   return (
     <div>
-      This is our home
+      <p>Show the HomePage</p>
       
     </div>
       );

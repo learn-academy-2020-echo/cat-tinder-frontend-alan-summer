@@ -15,7 +15,7 @@ render()  {
 
   return (
     <div>
-      This is our cat edit
+      <p>Edit the Aliens.</p>
     </div>
       );
     }
