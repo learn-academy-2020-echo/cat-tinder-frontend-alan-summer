@@ -11,11 +11,16 @@ import React, { Component } from 'react'
 
 
 render()  {
-
+  console.log(this.props.alien)
 
   return (
     <div>
-      <p>Show one Alien.</p>
+      <Col sm="6" id="show-body">
+  <Card body >
+    <CardTitle>Hi, my name is  { this.props.alien.name }!</CardTitle>
+    <CardText>I am { this.props.alien.age } years old. I enjoy { this.props.alien.enjoys }.</CardText>
+  </Card>
+</Col>
     </div>
       );
     }

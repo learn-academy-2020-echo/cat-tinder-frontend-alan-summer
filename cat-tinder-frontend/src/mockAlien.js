@@ -1,19 +1,19 @@
 let aliens = [
     {
       id: 1,
-      name: "Mittens",
-      age: 5,
+      name: "X Æ A-12 Musk",
+      distance: 0 ,
       enjoys: "sunshine and warm spots"
     },
     {
       id: 2,
-      name: "Raisins",
+      name: "",
       age: 4,
       enjoys: "being queen of the dogs"
     },
     {
       id: 3,
-      name: "Toast",
+      name: "",
       age: 1,
       enjoys: "getting all the attention"
     }

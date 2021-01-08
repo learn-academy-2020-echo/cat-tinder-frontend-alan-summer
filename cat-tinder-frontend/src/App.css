@@ -5,6 +5,10 @@
 .alien-header-icon {
   width: 30px;
 }
+.blackhole { 
+  width: 50%;
+  margin: -80px;
+}
 .button{
   margin-top: 20px;
   margin-right: 20px;
