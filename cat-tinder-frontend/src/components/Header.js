@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import AlienMail from '../assets/alienmail.png'
+import AlienMatches from '../assets/alienmatches.png'
+import AlienLogo from '../assets/alienlogo.png'
 import {
   Collapse,
   Navbar,
@@ -26,19 +29,20 @@ const Header = (props) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/"><div>hotaliens</div></NavbarBrand>
+        <NavbarBrand href="/"><img className= 'alien-logo' src= { AlienLogo }></img><div>hotaliens</div></NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/AlienIndex/">view matches</NavLink>
+              <NavLink href="/AlienIndex/"><img className= 'alien-header-icon' src= { AlienMatches }></img> view matches</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="">messages</NavLink>
+              <NavLink href=""><img className= 'alien-header-icon' src= { AlienMail }></img> signals from other beings</NavLink>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar>
+          </Nav>
+            <UncontrolledDropdown>
               <DropdownToggle nav caret>
-              <img src= "https://www.flaticon.com/svg/static/icons/svg/1083/1083598.svg"></img>
+              <img className= 'alien-header-icon' src= "https://www.flaticon.com/svg/static/icons/svg/1083/1083598.svg"></img>
               </DropdownToggle>
               <DropdownMenu right className = "rightdropdown">
                 <DropdownItem>
@@ -49,12 +53,10 @@ const Header = (props) => {
                 </DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem>
-                  new profile
+                <a href="/AlienNew/">new profile</a>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
-          </Nav>
-          <NavbarText>Simple Text</NavbarText>
         </Collapse>
       </Navbar>
     </div>

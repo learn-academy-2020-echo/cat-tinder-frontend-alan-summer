@@ -1,17 +1,10 @@
-.homecontainer{
-  padding: 100px;
-  display: flex
+.alien-logo {
+  width: 50px;
+  align-content: center;
 }
-
-.herotext{
+.alien-header-icon {
+  width: 30px;
 }
-
-.hotalienimage{
-  max-width: 30%;
-  height: auto;
-
-}
-
 .button{
   margin-top: 20px;
   margin-right: 20px;
@@ -28,12 +21,26 @@
   bottom:0;
   width:100%;
   height:60px;   /* Height of the footer */
-  background:rgb(252, 247, 247);
-  color: rgb(169, 164, 164);
+  background:rgb(244, 244, 244);
+  color: rgb(169, 169, 169);
 }
-.rightdropdown {
-  position: absolute;
- right: 0px;
-  width: 300px;
-  padding: 10px;
+
+
+.homecontainer{
+  align: center;
+  padding: 100px;
+  display: flex;
 }
+
+.herotext{
+  margin-right: 70px;
+}
+
+.hotalienimage{
+  max-width: 30%;
+  height: auto;
+  margin: -80px;
+  overflow: hidden;
+
+}
+
