@@ -42,7 +42,7 @@ render()  {
       <Router>
   <Switch>
     <Route exact path="/" component={ Home } />
-    <Route path="/Alienindex" component={ AlienIndex } />
+    <Route path="/AlienIndex" render= { (props) => <AlienIndex aliens= { this.state.aliens } /> } />
     <Route path="/Alienshow/:id" component={ AlienShow } />
     <Route path="/AlienNew" component={ AlienNew } />
     <Route path="/Alienedit/:id" component={ AlienEdit } />
