@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Card, CardTitle, Col } from 'reactstrap'
-// import Header from '../components/Header'
+import { NavLink } from 'react-router-dom'
+
 
 
 class AlienIndex extends Component { 
@@ -26,7 +27,13 @@ render()  {
                   return (
                     <Card body key={ index }>
                       <CardTitle>
-                        <h4>{ alien.name }</h4>
+                        <h4>
+                          <NavLink
+                          to={`/alienshow/${alien.id}`}
+                          >
+                          { alien.name }
+                          </NavLink>
+                        </h4>
                       </CardTitle>
                     </Card>
                   )

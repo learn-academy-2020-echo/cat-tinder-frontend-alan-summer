@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Card, CardTitle, CardText, Col } from 'reactstrap'
 
  class AlienShow extends Component {  
   constructor(props) {
@@ -17,8 +18,11 @@ render()  {
     <div>
       <Col sm="6" id="show-body">
   <Card body >
-    <CardTitle>Hi, my name is  { this.props.alien.name }!</CardTitle>
-    <CardText>I am { this.props.alien.age } years old. I enjoy { this.props.alien.enjoys }.</CardText>
+    <CardTitle>my people call me<br></br><b>{ this.props.alien.name }</b></CardTitle>
+    <CardText>
+      <h3><b>{ this.props.alien.distance } lightyears away</b></h3>
+      <br></br>
+      hails from { this.props.alien.planet }.</CardText>
   </Card>
 </Col>
     </div>

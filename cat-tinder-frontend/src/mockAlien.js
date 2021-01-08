@@ -1,21 +1,21 @@
 let aliens = [
     {
       id: 1,
-      name: "X Æ A-12 Musk",
-      distance: 0 ,
-      enjoys: "sunshine and warm spots"
+      name: "X Æ A-12 Musk aka Chad",
+      distance: 0.0000000000001 ,
+      planet: "Area 51, Earth"
     },
     {
       id: 2,
-      name: "",
-      age: 4,
-      enjoys: "being queen of the dogs"
+      name: "LilMayo",
+      distance: 0.00001582002493716235,
+      planet: "Mars"
     },
     {
       id: 3,
-      name: "",
-      age: 1,
-      enjoys: "getting all the attention"
+      name: "Chewbacca",
+      distance: 347839744,
+      planet: "Kashyyyk"
     }
   ]
   export default aliens
