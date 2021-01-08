@@ -5,6 +5,7 @@
 .alien-header-icon {
   width: 30px;
 }
+
 .blackhole { 
   width: 50%;
   margin: -80px;
@@ -46,5 +47,10 @@
   margin: -80px;
   overflow: hidden;
 
+}
+
+.new-profile-form{
+  margin: 80px;
+  max-width: 50%;
 }
 

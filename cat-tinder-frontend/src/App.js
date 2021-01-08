@@ -9,14 +9,6 @@ import AlienShow from './pages/AlienShow';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import './App.css'
-
-
-
-
-
-
-
-
 import {
   BrowserRouter as Router,
   Route,
@@ -32,6 +24,10 @@ import {
   } 
 
 
+createNewAlien = (newalien) => {
+  console.log(newalien)
+}
+
 
 render()  {
 
@@ -42,9 +38,9 @@ render()  {
       <Router>
   <Switch>
     <Route exact path="/" component={ Home } />
-    <Route path="/AlienIndex" render= { (props) => <AlienIndex aliens= { this.state.aliens } /> } />
+    <Route path="/alienindex" render= { (props) => <AlienIndex aliens= { this.state.aliens } /> } />
     <Route 
-    exact path={"/AlienShow/:id"}
+    exact path={"/alienshow/:id"}
     render={ (props) => {
       let id = props.match.params.id
       let alien = this.state.aliens.find(alien => alien.id === parseInt(id))
@@ -55,7 +51,10 @@ render()  {
       )
     }}
   />
-    <Route path="/AlienNew" component={ AlienNew } />
+    <Route
+      path="/aliennew"
+      render={ (props) => <AlienNew createNewAlien={ this.createNewAlien }/> }
+    />
     <Route path="/Alienedit/:id" component={ AlienEdit } />
     <Route component={ NotFound }/>
   </Switch>
