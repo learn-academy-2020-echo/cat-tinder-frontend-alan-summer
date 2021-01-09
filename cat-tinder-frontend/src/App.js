@@ -28,12 +28,16 @@ createNewAlien = (newalien) => {
   console.log(newalien)
 }
 
+updateAlien = (alien, id) => {
+  console.log("alien:", alien)
+  console.log("id:", id)
+}
 
 render()  {
 
 
   return (
-    <div>
+    <div className= 'app-js-div'>
       <Header/> 
       <Router>
   <Switch>
@@ -55,7 +59,19 @@ render()  {
       path="/aliennew"
       render={ (props) => <AlienNew createNewAlien={ this.createNewAlien }/> }
     />
-    <Route path="/Alienedit/:id" component={ AlienEdit } />
+    <Route
+  exact path={"/alienedit/:id"}
+  render={ (props) => {
+    let id = props.match.params.id
+    let alien = this.state.aliens.find(alien => alien.id === parseInt(id))
+    return(
+      <AlienEdit
+        updateAlien={ this.updateAlien }
+        alien={ alien }
+      />
+    )
+  }}
+/>
     <Route component={ NotFound }/>
   </Switch>
 </Router>

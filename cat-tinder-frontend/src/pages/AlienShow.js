@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, CardTitle, CardText, Col } from 'reactstrap'
+import { Card, CardTitle, CardText, Col, NavLink, Button } from 'reactstrap'
 
  class AlienShow extends Component {  
   constructor(props) {
@@ -16,15 +16,29 @@ render()  {
 
   return (
     <div>
-      <Col sm="6" id="show-body">
+      <center>
+      <Col sm="6" id="show-body" className= 'main-container'>
   <Card body >
-    <CardTitle>my people call me<br></br><b>{ this.props.alien.name }</b></CardTitle>
+    <CardTitle>my people call me
+      <br></br>
+      <h2><b>{ this.props.alien.name }</b></h2>
+      </CardTitle>
+      <div className= "alien-prof-image-wrapper">
+      <img className="img-fluid" alt = "find ur perfect alien match" src = { this.props.alien.img }></img>
+      </div>
     <CardText>
       <h3><b>{ this.props.alien.distance } lightyears away</b></h3>
-      <br></br>
       hails from { this.props.alien.planet }.</CardText>
-  </Card>
-</Col>
+      <NavLink
+        to={`/alienedit/${this.props.alien.id}`}
+      >
+        <Button color="secondary">
+          edit pr0file
+        </Button>
+    </NavLink>
+      </Card>
+    </Col>
+    </center>
     </div>
       );
     }

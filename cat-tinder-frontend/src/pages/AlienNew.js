@@ -34,8 +34,9 @@ render()  {
 
 
   return (
-    <div>
+    <div className= 'main-container'>
       <center>
+        <h2>create a new pr0file</h2>
       <Form className= 'new-profile-form'>
         <FormGroup>
             <Label>name</Label>

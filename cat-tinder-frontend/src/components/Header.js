@@ -29,7 +29,10 @@ const Header = (props) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/"><img className= 'alien-logo' src= { AlienLogo }></img><div>hotaliens</div></NavbarBrand>
+        <NavbarBrand href="/">
+        <div className= 'alien-logo-wrapper'><img className= 'alien-logo' src= { AlienLogo }></img>
+          h0taliens</div>
+        </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
@@ -37,7 +40,7 @@ const Header = (props) => {
               <NavLink href="/AlienIndex/"><img className= 'alien-header-icon' src= { AlienMatches }></img> view matches</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href=""><img className= 'alien-header-icon' src= { AlienMail }></img> signals from other beings</NavLink>
+              <NavLink href=""><img className= 'alien-header-icon' src= { AlienMail }></img> signals fr0m 0ther beings</NavLink>
             </NavItem>
           </Nav>
             <UncontrolledDropdown>
