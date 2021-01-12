@@ -73,13 +73,12 @@ h2 {
 .homecontainer{
   padding: 70px;
   display: flex;
-    justify-content: center;
-  overflow: hidden;
+  justify-content: center;
 
 }
 
 .hot-alien-image{
-  max-width: 60%;
+  max-width: 80%;
   min-width: 200px;
   overflow:hidden;
 }

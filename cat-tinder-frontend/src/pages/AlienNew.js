@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
 import { Redirect } from 'react-router-dom'
-import axios from 'axios'; 
 
  class AlienNew extends Component {  
   constructor(props) {
@@ -64,6 +63,15 @@ render()  {
               name="planet"
               onChange={ this.handleChange }
               value={ this.state.form.planet }
+            />
+        </FormGroup>
+        <FormGroup>
+            <Label>image: paste URL here with .png or .jpg extension</Label>
+            <Input
+              type="text"
+              name="img"
+              onChange={ this.handleChange }
+              value={ this.state.form.img }
             />
         </FormGroup>
 
