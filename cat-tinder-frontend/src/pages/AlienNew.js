@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
 import { Redirect } from 'react-router-dom'
+import axios from 'axios'; 
 
  class AlienNew extends Component {  
   constructor(props) {

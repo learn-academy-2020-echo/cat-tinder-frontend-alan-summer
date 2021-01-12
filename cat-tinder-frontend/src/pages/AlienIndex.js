@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, CardTitle, Col } from 'reactstrap'
+import { Card, CardTitle, CardImg } from 'reactstrap'
 import { NavLink } from 'react-router-dom'
 
 
@@ -22,23 +22,31 @@ render()  {
       <center>
           <h2>y0ur matches!</h2>
             <br />
-              <Col sm="6">
+              {/* <Col sm="6"> */}
+              <div className = "matches-container">
                 { this.props.aliens.map((alien, index) => {
                   return (
-                    <Card body key={ index }>
+                    <Card 
+                    body key={ index } 
+                    className= "match-card">
                       <CardTitle>
                         <h4>
-                          <NavLink className= 'profile-link'
+                          <NavLink 
+                          className= 'profile-link'
                           to={`/alienshow/${alien.id}`}
                           >
                           { alien.name }
                           </NavLink>
                         </h4>
+                        <a href= {`/alienshow/${alien.id}`}>
+                        <CardImg alt = "find ur perfect alien match" src = { alien.img } />
+                        </a>
                       </CardTitle>
                     </Card>
                   )
                 })}
-              </Col>
+                </div>
+              {/* </Col> */}
       </center>
     </div>
       );

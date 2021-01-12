@@ -42,7 +42,28 @@ import {
 
 
 createNewAlien = (newalien) => {
-  console.log(newalien)
+  return fetch("http://localhost:3000/aliens", {
+    // converting an object to a string
+    body: JSON.stringify(newalien),
+    // specify the info being sent in JSON and the info returning should be JSON
+    headers: {
+      "Content-Type": "application/json"
+    },
+    // HTTP verb so the correct endpoint is invoked on the server
+    method: "POST"
+  })
+  .then(response => {
+    if(response.status === 422){
+      alert("Please check your submission.")
+    }
+    return response.json()
+  })
+  .then(payload => {
+    this.alienIndex()
+  })
+  .catch(errors => {
+    console.log("create errors:", errors)
+  })
 }
 
 updateAlien = (alien, id) => {
