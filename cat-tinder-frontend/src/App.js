@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import mockAlien from './mockAlien.js';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import AlienEdit from './pages/AlienEdit';
@@ -19,13 +18,52 @@ import {
   constructor(props) {
     super(props)
     this.state = {
-      aliens: mockAlien
+      aliens: []
     }
   } 
 
+  componentDidMount(){
+    this.alienIndex()
+  }
+
+  alienIndex = () => {
+    fetch("http://localhost:3000/aliens")
+    .then(response => {
+      return response.json()
+    })
+    .then(aliensArray => {
+      // set the state with the data from the backend into the empty array
+      this.setState({ aliens: aliensArray })
+    })
+    .catch(errors => {
+      console.log("index errors:", errors)
+    })
+  }
+
 
 createNewAlien = (newalien) => {
-  console.log(newalien)
+  return fetch("http://localhost:3000/aliens", {
+    // converting an object to a string
+    body: JSON.stringify(newalien),
+    // specify the info being sent in JSON and the info returning should be JSON
+    headers: {
+      "Content-Type": "application/json"
+    },
+    // HTTP verb so the correct endpoint is invoked on the server
+    method: "POST"
+  })
+  .then(response => {
+    if(response.status === 422){
+      alert("Please check your submission.")
+    }
+    return response.json()
+  })
+  .then(payload => {
+    this.alienIndex()
+  })
+  .catch(errors => {
+    console.log("create errors:", errors)
+  })
 }
 
 updateAlien = (alien, id) => {
@@ -41,14 +79,24 @@ render()  {
       <Header/> 
       <Router>
   <Switch>
-    <Route exact path="/" component={ Home } />
-    <Route path="/alienindex" render= { (props) => <AlienIndex aliens= { this.state.aliens } /> } />
     <Route 
-    exact path={"/alienshow/:id"}
-    render={ (props) => {
+      exact path="/" 
+      component={ Home } 
+    />
+    <Route 
+      path="/alienindex"
+      render= { (props) => 
+        <AlienIndex 
+          aliens= { this.state.aliens } 
+        /> 
+      } 
+    />
+    <Route 
+      exact path={"/alienshow/:id"}
+      render={ (props) => {
       let id = props.match.params.id
       let alien = this.state.aliens.find(alien => alien.id === parseInt(id))
-      return ( 
+      return ( this.state.aliens.length > 0 &&
         <AlienShow
           alien={ alien }
         />
