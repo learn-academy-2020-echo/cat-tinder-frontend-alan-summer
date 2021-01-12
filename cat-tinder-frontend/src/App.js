@@ -43,7 +43,18 @@ render()  {
   <Switch>
     <Route exact path="/" component={ Home } />
     <Route path="/AlienIndex" render= { (props) => <AlienIndex aliens= { this.state.aliens } /> } />
-    <Route path="/Alienshow/:id" component={ AlienShow } />
+    <Route 
+    exact path={"/AlienShow/:id"}
+    render={ (props) => {
+      let id = props.match.params.id
+      let alien = this.state.aliens.find(alien => alien.id === parseInt(id))
+      return ( 
+        <AlienShow
+          alien={ alien }
+        />
+      )
+    }}
+  />
     <Route path="/AlienNew" component={ AlienNew } />
     <Route path="/Alienedit/:id" component={ AlienEdit } />
     <Route component={ NotFound }/>
