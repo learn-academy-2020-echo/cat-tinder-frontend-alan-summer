@@ -18,9 +18,9 @@ render()  {
 
 
   return (
-    <div>
+    <div className= 'main-container'>
       <center>
-          <h2>yOur matches!</h2>
+          <h2>y0ur matches!</h2>
             <br />
               <Col sm="6">
                 { this.props.aliens.map((alien, index) => {
@@ -28,7 +28,7 @@ render()  {
                     <Card body key={ index }>
                       <CardTitle>
                         <h4>
-                          <NavLink
+                          <NavLink className= 'profile-link'
                           to={`/alienshow/${alien.id}`}
                           >
                           { alien.name }

@@ -15,12 +15,14 @@ render()  {
 
   return (
     <>
+    <div className= 'main-container'>
     <div className= 'homecontainer'>
       <div className= 'herotext'>
-      <h1>You entered a black hole</h1>
-      <button className= 'button' onClick='/'>ET phone Home</button>
+      <h1>y0u entered a black h0le</h1>
+      <button className= 'button' onClick='/'>ET ph0ne h0me</button>
     </div>
       <img className= 'blackhole' src = { BlackHole }></img>
+    </div>
     </div>
     </>
       );
