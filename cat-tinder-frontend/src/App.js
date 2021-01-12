@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import mockAlien from './mockAlien.js';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import AlienEdit from './pages/AlienEdit';
@@ -19,9 +18,27 @@ import {
   constructor(props) {
     super(props)
     this.state = {
-      aliens: mockAlien
+      aliens: []
     }
   } 
+
+  componentDidMount(){
+    this.alienIndex()
+  }
+
+  alienIndex = () => {
+    fetch("http://localhost:3000/aliens")
+    .then(response => {
+      return response.json()
+    })
+    .then(aliensArray => {
+      // set the state with the data from the backend into the empty array
+      this.setState({ aliens: aliensArray })
+    })
+    .catch(errors => {
+      console.log("index errors:", errors)
+    })
+  }
 
 
 createNewAlien = (newalien) => {
@@ -41,14 +58,24 @@ render()  {
       <Header/> 
       <Router>
   <Switch>
-    <Route exact path="/" component={ Home } />
-    <Route path="/alienindex" render= { (props) => <AlienIndex aliens= { this.state.aliens } /> } />
     <Route 
-    exact path={"/alienshow/:id"}
-    render={ (props) => {
+      exact path="/" 
+      component={ Home } 
+    />
+    <Route 
+      path="/alienindex"
+      render= { (props) => 
+        <AlienIndex 
+          aliens= { this.state.aliens } 
+        /> 
+      } 
+    />
+    <Route 
+      exact path={"/alienshow/:id"}
+      render={ (props) => {
       let id = props.match.params.id
       let alien = this.state.aliens.find(alien => alien.id === parseInt(id))
-      return ( 
+      return ( this.state.aliens.length > 0 &&
         <AlienShow
           alien={ alien }
         />

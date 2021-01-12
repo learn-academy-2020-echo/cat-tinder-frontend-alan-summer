@@ -24,7 +24,7 @@ render()  {
       <h2><b>{ this.props.alien.name }</b></h2>
       </CardTitle>
       <div className= "alien-prof-image-wrapper">
-      <img className="img-fluid" alt = "find ur perfect alien match" src = { this.props.alien.img }></img>
+      <img className="img-fluid" alt = "find ur perfect alien match" src = { this.props.alien.img } ></img>
       </div>
     <CardText>
       <h3><b>{ this.props.alien.distance } lightyears away</b></h3>

@@ -24,4 +24,3 @@ let aliens = [
       img: SexyChewbacca
     }
   ]
-  export default aliens
