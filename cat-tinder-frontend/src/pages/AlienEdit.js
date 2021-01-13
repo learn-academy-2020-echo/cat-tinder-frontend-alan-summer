@@ -36,14 +36,17 @@ render()  {
 
 
   return (
-    <div>
+    <div className= 'main-container'>
       <center>
-       <Form className= 'new-profile-form'>
+      <h2>edit y0ur pr0file</h2>
+       <Form className= 'profile-form'>
         <FormGroup>
             <Label>name</Label>
             <Input
               type="text"
               name="name"
+              onChange={ this.handleChange }
+              value={ this.state.form.name }
             />
         </FormGroup>
         <FormGroup>
@@ -51,6 +54,8 @@ render()  {
             <Input
               type="number"
               name="distance"
+              onChange={ this.handleChange }
+              value={ this.state.form.distance }
             />
         </FormGroup>
         <FormGroup>
@@ -58,6 +63,18 @@ render()  {
             <Input
               type="text"
               name="planet"
+              onChange={ this.handleChange }
+              value={ this.state.form.planet }
+            />
+        </FormGroup>
+        <FormGroup>
+            <Label>image<br></br>
+              paste URL here with .png or .jpg extension</Label>
+            <Input
+              type="text"
+              name="img"
+              onChange={ this.handleChange }
+              value={ this.state.form.img }
             />
         </FormGroup>
 
@@ -68,6 +85,7 @@ render()  {
         >
           edit pr0file
         </Button>
+        
       </Form>
       </center>
       { this.state.success && <Redirect to={ `/alienshow/${this.props.alien.id}` }/> }

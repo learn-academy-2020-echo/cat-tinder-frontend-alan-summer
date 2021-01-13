@@ -67,8 +67,46 @@ createNewAlien = (newalien) => {
 }
 
 updateAlien = (alien, id) => {
-  console.log("alien:", alien)
-  console.log("id:", id)
+  return fetch(`http://localhost:3000/aliens/${id}`, {
+    // converting an object to a string
+    body: JSON.stringify(alien),
+    // specify the info being sent in JSON and the info returning should be JSON
+    headers: {
+      "Content-Type": "application/json"
+    },
+    // HTTP verb so the correct endpoint is invoked on the server
+    method: "PATCH"
+  })
+  .then(response => {
+    if(response.status === 422){
+      alert("Please check your submission.")
+    }
+    return response.json()
+  })
+  .then(payload => {
+    this.alienIndex()
+  })
+  .catch(errors => {
+    console.log("update errors:", errors)
+  })
+}
+
+deleteAlien = (id) => {
+  return fetch(`http://localhost:3000/aliens/${id}`, {
+    headers: {
+      "Content-Type": "application/json"
+    },
+    method: "DELETE"
+  })
+  .then(response => {
+    return response.json()
+  })
+  .then(payload => {
+    this.alienIndex()
+  })
+  .catch(errors => {
+    console.log("delete errors:", errors)
+  })
 }
 
 render()  {
@@ -99,24 +137,30 @@ render()  {
       return ( this.state.aliens.length > 0 &&
         <AlienShow
           alien={ alien }
+          deleteAlien={ this.deleteAlien }
         />
       )
     }}
   />
     <Route
       path="/aliennew"
-      render={ (props) => <AlienNew createNewAlien={ this.createNewAlien }/> }
+      render={ (props) => 
+      <AlienNew 
+        createNewAlien=
+        { this.createNewAlien }
+        /> }
     />
+
     <Route
-  exact path={"/alienedit/:id"}
-  render={ (props) => {
-    let id = props.match.params.id
-    let alien = this.state.aliens.find(alien => alien.id === parseInt(id))
-    return(
-      <AlienEdit
-        updateAlien={ this.updateAlien }
-        alien={ alien }
-      />
+      exact path={"/alienedit/:id"}
+      render={ (props) => {
+      let id = props.match.params.id
+      let alien = this.state.aliens.find(alien => alien.id === parseInt(id))
+      return(
+        <AlienEdit
+          updateAlien={ this.updateAlien }
+          alien={ alien }
+        />
     )
   }}
 />

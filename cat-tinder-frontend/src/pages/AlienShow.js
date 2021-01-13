@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Card, CardTitle, CardText, Col, Button } from 'reactstrap'
-import { NavLink } from 'react-router-dom'
+import { Card, CardTitle, CardText, Col, Button, Row } from 'reactstrap'
+import { NavLink, Redirect } from 'react-router-dom'
 
  class AlienShow extends Component {  
   constructor(props) {
@@ -30,13 +30,28 @@ render()  {
     <CardText>
       <h3><b>{ this.props.alien.distance } lightyears away</b></h3>
       hails from { this.props.alien.planet }.</CardText>
-        <NavLink
-          to={`/alienedit/${this.props.alien.id}`}
-        >
-          <Button>
-          edit pr0file
+      <Row>
+        <Col xs="6">
+          <NavLink
+            to={`/alienedit/${this.props.alien.id}`}
+          >
+            <Button outline color="info" size="lg">
+            edit pr0file
+            </Button>
+          </NavLink>
+      </Col>
+      <Col xs="6">
+      <NavLink to= '/alienindex'>
+          <Button 
+            outline color="info" 
+            size="lg"
+            onClick={() => this.props.deleteAlien(this.props.alien.id) }
+            >
+              delete pr0file
           </Button>
       </NavLink>
+      </Col >
+      </Row>
       </Card>
     </Col>
     </center>

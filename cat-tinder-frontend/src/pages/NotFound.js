@@ -19,7 +19,11 @@ render()  {
     <div className= 'homecontainer'>
       <div className= 'herotext'>
       <h1>y0u entered a black h0le</h1>
-      <button className= 'button' onClick='/'>ET ph0ne h0me</button>
+      <a href= "/">
+      <button className= 'button'>
+        ET ph0ne h0me
+        </button>
+      </a>
     </div>
       <img className= 'blackhole' src = { BlackHole }></img>
     </div>

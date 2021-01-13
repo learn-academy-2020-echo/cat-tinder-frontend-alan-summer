@@ -15,7 +15,7 @@ render()  {
   return (
     <div className= "footer">
       <br></br>  
-      <center>Created By Summer & Alan</center>
+      <center>created by summer & alan | ech0 2021</center>
     </div>
       );
     }
