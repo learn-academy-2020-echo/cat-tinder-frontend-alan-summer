@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import HotFemaleAlien from '../assets/hotfemalealien.png'
+import { Col, Row } from 'reactstrap'
 
  class Home extends Component {  
   constructor(props) {
@@ -16,10 +17,17 @@ render()  {
 
   return (
     <>
-    <center>
+    
     <div className= 'main-container'>
-    <div className= 'homecontainer'>
+    <Row>
+    <Col>
+      <div className= 'hot-alien-image-wrapper'>
+          <img className= 'hot-alien-image' src = { HotFemaleAlien }></img>
+      </div>
+    </Col>
+    <Col>
       <div className= 'herotext'>
+        <center>
         <h1>meet h0t single aliens in y0ur galaxy</h1>
         <button className= 'button'>
           <a href='/AlienNew'>
@@ -31,14 +39,13 @@ render()  {
             see what's 0ut there
           </a>
         </button>
+        </center>
       </div>
-      
-      <div className= 'hot-alien-image-wrapper'>
-          <img className= 'hot-alien-image' src = { HotFemaleAlien }></img>
-      </div>
+    </Col>
+
+    </Row>
     </div>
-    </div>
-    </center>
+    
     </>
       );
     }

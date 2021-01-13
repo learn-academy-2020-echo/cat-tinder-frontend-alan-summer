@@ -28,7 +28,7 @@ const Header = (props) => {
 
   return (
     <div>
-      <Navbar color="light" light expand="md">
+      <Navbar fixed="top" color="light" light expand="md">
         <NavbarBrand href="/">
         <div className= 'alien-logo-wrapper'><img className= 'alien-logo' src= { AlienLogo }></img>
           h0taliens</div>

@@ -39,7 +39,7 @@ render()  {
     <div className= 'main-container'>
       <center>
       <h2>edit y0ur pr0file</h2>
-       <Form className= 'new-profile-form'>
+       <Form className= 'profile-form'>
         <FormGroup>
             <Label>name</Label>
             <Input

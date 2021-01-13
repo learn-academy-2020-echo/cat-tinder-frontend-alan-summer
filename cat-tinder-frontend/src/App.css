@@ -61,7 +61,7 @@
 
 h1 {
   font-weight: bold;
-  color: #777777
+  color: #777777;
 }
 
 h2 {
@@ -70,29 +70,23 @@ h2 {
 }
 
 
-.homecontainer{
-  padding: 70px;
-  display: flex;
-  justify-content: center;
-
+.herotext{
+  margin-top: 40px;
 }
 
 .hot-alien-image{
-  max-width: 80%;
-  min-width: 200px;
+  max-width: 100%;
+  min-width: 320px;
+  margin-top: -20px;
   overflow:hidden;
 }
 
-.hot-alien-image-wrapper {
-  margin-top: -20px;
-  width: 100%;
-}
-
 .main-container {
-  margin: 25px;
-  margin-bottom: 80px;
+  margin-right: 90px;
+  margin-left: 90px;
+  margin-top: 200px;
+  margin-bottom: 100px;
   justify-content: center;
-
 }
 
 .matches-container {
@@ -100,7 +94,6 @@ h2 {
   flex-wrap: wrap;
   width: 500px;
   margin-bottom: 70px;
-  overflow-x: auto;
 }
 
 .match-card {
@@ -108,7 +101,7 @@ h2 {
   margin: 10px;
 }
 
-.new-profile-form{
+.profile-form{
   max-width: 50%;
 }
 
