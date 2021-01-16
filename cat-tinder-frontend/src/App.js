@@ -27,7 +27,7 @@ import {
   }
 
   alienIndex = () => {
-    fetch("http://localhost:3000/aliens")
+    fetch("https://cat-tinder-backend-alan-summer.herokuapp.com/aliens")
     .then(response => {
       return response.json()
     })
@@ -42,7 +42,7 @@ import {
 
 
 createNewAlien = (newalien) => {
-  return fetch("http://localhost:3000/aliens", {
+  return fetch("https://cat-tinder-backend-alan-summer.herokuapp.com/aliens", {
     // converting an object to a string
     body: JSON.stringify(newalien),
     // specify the info being sent in JSON and the info returning should be JSON
@@ -67,7 +67,7 @@ createNewAlien = (newalien) => {
 }
 
 updateAlien = (alien, id) => {
-  return fetch(`http://localhost:3000/aliens/${id}`, {
+  return fetch(`https://cat-tinder-backend-alan-summer.herokuapp.com/aliens/${id}`, {
     // converting an object to a string
     body: JSON.stringify(alien),
     // specify the info being sent in JSON and the info returning should be JSON
@@ -92,7 +92,7 @@ updateAlien = (alien, id) => {
 }
 
 deleteAlien = (id) => {
-  return fetch(`http://localhost:3000/aliens/${id}`, {
+  return fetch(`https://cat-tinder-backend-alan-summer.herokuapp.com/aliens/${id}`, {
     headers: {
       "Content-Type": "application/json"
     },
